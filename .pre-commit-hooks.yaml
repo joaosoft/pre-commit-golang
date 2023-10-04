@@ -93,3 +93,39 @@
     files: '\.go$'
     language: 'script'
     description: "Runs `go mod vendor`, requires golang"
+-   id: go-opennota
+    name: 'go-opennota'
+    entry: run-go-opennota.sh
+    files: '\.go$'
+    language: 'script'
+    description: "Runs `opennota`, requires golang"
+-   id: go-deadcode
+    name: 'go-deadcode'
+    entry: run-go-deadcode.sh
+    files: '\.go$'
+    language: 'script'
+    description: "Runs `deadcode`, requires golang"
+-   id: go-sec
+    name: 'go-sec'
+    entry: run-go-sec.sh
+    files: '\.go$'
+    language: 'script'
+    description: "Runs `gosec`, requires golang"
+-   id: go-revive
+    name: 'go-revive'
+    entry: run-go-revive.sh
+    files: '\.go$'
+    language: 'script'
+    description: "Runs `revive`, requires golang"
+-   id: go-staticcheck
+    name: 'go-staticcheck'
+    entry: run-go-staticcheck.sh
+    files: '\.go$'
+    language: 'script'
+    description: "Runs `staticcheck`, requires golang"
+-   id: go-errcheck
+    name: 'go-errcheck'
+    entry: run-go-errcheck.sh
+    files: '\.go$'
+    language: 'script'
+    description: "Runs `errcheck`, requires golang"

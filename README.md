@@ -29,6 +29,11 @@ Add this to your `.pre-commit-config.yaml`
         - id: go-unit-tests
         - id: go-build
         - id: go-mod-tidy
+        - id: go-opennota
+        - id: go-deadcode
+        - id: go-sec
+        - id: go-revive
+        - id: go-staticcheck
 
 ### Available hooks
 
@@ -37,14 +42,20 @@ Add this to your `.pre-commit-config.yaml`
 - `go-lint` - Runs `golint`, requires https://github.com/golang/lint but is unmaintained & deprecated in favour of [`golangci-lint`](https://github.com/golangci/golangci-lint)
 - `go-imports` - Runs `goimports`, requires golang.org/x/tools/cmd/goimports
 - `go-cyclo` - Runs `gocyclo`, require https://github.com/fzipp/gocyclo
-- `validate-toml` - Runs `tomlv`, requires
-   https://github.com/BurntSushi/toml/tree/master/cmd/tomlv
-- `no-go-testing` - Checks that no files are using `testing.T`, if you want
-  developers to use a different testing framework
-- `golangci-lint` - run `golangci-lint run ./...`, requires
-  [golangci-lint](https://github.com/golangci/golangci-lint)
+- `validate-toml` - Runs `tomlv`, requires https://github.com/BurntSushi/toml/tree/master/cmd/tomlv
+- `no-go-testing` - Checks that no files are using `testing.T`, if you want developers to use a different testing framework
+- `golangci-lint` - run `golangci-lint run ./...`, requires [golangci-lint](https://github.com/golangci/golangci-lint)
 - `go-critic` - run `gocritic check ./...`, requires [go-critic](https://github.com/go-critic/go-critic)
 - `go-unit-tests` - run `go test -tags=unit -timeout 30s -short -v`
 - `go-build` - run `go build`, requires golang
 - `go-mod-tidy` - run `go mod tidy -v`, requires golang
 - `go-mod-vendor` - run `go mod vendor`, requires golang
+- `go-opennota` 
+  - run `aligncheck ./...`, requires [aligncheck](https://gitlab.com/opennota/check/cmd/aligncheck) 
+  - run `structcheck ./...`, requires [structcheck](https://gitlab.com/opennota/check/cmd/structcheck)
+  - run `varcheck ./...` requires [varcheck](https://gitlab.com/opennota/check/cmd/varcheck)
+- `go-deadcode` - run `deadcode ./...`, requires [deadcode](https://github.com/tsenart/deadcode)
+- `go-sec` - run `gosec -exclude-dir vendor ./...`, requires [gosec](https://github.com/securego/gosec/v2/cmd/gosec)
+- `go-revive` - run `revive -exclude ./vendor/... ./...`, requires [revive](https://github.com/mgechev/revive)
+- `go-staticcheck` - run `staticcheck ./...`, requires [staticcheck](https://honnef.co/go/tools/cmd/staticcheck)
+- `go-errcheck` - run `errcheck -exclude ./vendor ./...`, requires [errcheck](https://github.com/kisielk/errcheck)
