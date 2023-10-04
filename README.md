@@ -34,6 +34,7 @@ Add this to your `.pre-commit-config.yaml`
         - id: go-sec
         - id: go-revive
         - id: go-staticcheck
+        - id: go-errcheck
 
 ### Available hooks
 
